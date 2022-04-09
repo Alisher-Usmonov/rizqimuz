@@ -1,0 +1,624 @@
+@import "mixins";
+@import "variables";
+
+@include media-min(1670px) {
+   .nav__ul--mixed .nav__li:nth-child(4) .nav__link {
+      color: $MAIN_BLUE_COLOR;
+
+      &::after {
+         background-color: $MAIN_BLUE_COLOR;
+      }
+   }
+}
+
+@include media-min(1670px) {
+   .nav__ul--mixed .nav__li:nth-child(4) .nav__link {
+      color: $MAIN_BLUE_COLOR;
+
+      &::after {
+         background-color: $MAIN_BLUE_COLOR;
+      }
+   }
+}
+
+@include media-min(1450px) {
+   .nav__ul--mixed .nav__li:nth-child(3) .nav__link {
+      color: $MAIN_BLUE_COLOR;
+
+      &::after {
+         background-color: $MAIN_BLUE_COLOR;
+      }
+   }
+}
+
+@include media-max(1190px) {
+   .project-info {
+      width: 100%;
+   }
+}
+
+@include media-max(1160px) {
+   .filter {
+      .flex-container {
+         display: grid;
+         grid-template-columns: repeat(4, 1fr);
+         grid-gap: 24px;
+         padding: 0 10px;
+      }
+
+      .select {
+         width: auto;
+      }
+   }
+}
+
+@include media-max(1130px) {
+   .button {
+      font-size: 14px;
+      line-height: 17px;
+   }
+
+   .intro {
+      height: auto;
+
+      .logo svg path {
+         fill: $WHITE_COLOR;
+      }
+   }
+
+   .intro__bg {
+      left: 0;
+      height: 166px;
+      background-image: url('/img/bg-images/bg-about@laptop.jpg');
+      background-position: center;
+      background-size: cover;
+   }
+
+   .intro__inner {
+      width: 100%;
+      padding-top: 55px;
+   }
+
+   .intro__title {
+      font-size: 34px;
+      line-height: 50px;
+
+      span {
+         display: block;
+      }
+
+      span:first-child {
+         color: $WHITE_COLOR;
+      }
+   }
+
+   .intro__text {
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 17px;
+   }
+
+   .intro__links {
+      display: none;
+   }
+
+   .user, .signin {
+      display: none;
+   }
+
+   .nav {
+      padding-top: 24px;
+   }
+
+   .nav__ul {
+      position: fixed;
+      top: 0;
+      left: 1000%;
+      z-index: 5;
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      height: 100vh;
+      padding: 68px 20px 20px;
+      background-color: $MAIN_BG_COLOR;
+      overflow: auto;
+      transition: 0.5s all ease-out;
+   }
+
+   .nav__li {
+      margin-right: 0 !important;
+   }
+
+   .nav__li--mobile {
+      display: block;
+   }
+
+   .nav__link {
+      display: block;
+      padding: 32px 0;
+      border-bottom: 1px solid $INPUT_BORDER_COLOR;
+      font-size: 20px;
+      line-height: 24px;
+      color: $MAIN_BLUE_COLOR !important;
+
+      &::after {
+         display: none;
+      }
+   }
+
+   .nav__menu, .nav__close {
+      display: flex;
+   }
+
+   .section {
+      padding-top: 40px;
+   }
+
+   .section__main {
+      padding-top: 30px;
+   }
+
+   .card {
+      height: 210px;
+   }
+
+   .card__heading {
+      font-size: 16px;
+      line-height: 19px;
+   }
+
+   .freelancer__info {
+      padding: 15px;
+   }
+
+   .freelancer__name {
+      font-size: 20px;
+      line-height: 24px;
+   }
+
+   .freelancer__level {
+      font-size: 12px;
+      line-height: 14px;
+   }
+
+   .sponsors__card {
+      height: 208px;
+
+      img {
+         width: 90px;
+      }
+   }
+
+   .statistics {
+      padding-bottom: 60px;
+   }
+
+   .statistics__value {
+      font-size: 28px;
+      line-height: 33px;
+   }
+
+   .statistics__title {
+      font-size: 20px;
+      line-height: 23px;
+   }
+
+   .footer__inner {
+      padding-top: 30px;
+      padding-bottom: 30px;
+   }
+
+   .header {
+      height: 166px;
+   }
+
+   .header__title {
+      padding-top: 55px;
+      font-size: 34px;
+      line-height: 50px;
+   }
+
+   .main {
+      padding-top: 70px;
+      padding-bottom: 60px;
+   }
+
+   .pagination-container {
+      justify-content: center;
+      padding: 20px 10px 0;
+   }
+
+   #pagination span a {
+      font-size: 16px;
+      line-height: 19px;
+   }
+
+   .about-text {
+      font-size: 14px;
+      line-height: 16px;
+   }
+
+   .founders {
+      padding-top: 30px;
+   }
+
+   .founders__card {
+      height: 300px;
+   }
+
+   .founders__heading {
+      font-size: 20px;
+      line-height: 24px;
+   }
+
+   .founder__name {
+      padding: 20px;
+      font-size: 20px;
+      line-height: 24px;
+   }
+
+   .text {
+      margin-bottom: 7px;
+      font-size: 14px;
+      line-height: 16px;
+   }
+
+   .main--contact {
+      background-image: none;
+   }
+
+   .error {
+      margin-top: 5px;
+      font-size: 12px;
+      line-height: 14px;
+   }
+
+   .label::after {
+      top: 24px;
+   }
+
+   .auth__inner {
+      margin: 0 auto;
+   }
+
+   .auth-signin, .auth-signup {
+      padding-top: 145px;
+   }
+
+   .profile__header {
+      margin-top: -60px;
+   }
+
+   .profile__owner {
+      align-items: flex-start;
+   }
+
+   .profile__avatar {
+      flex-shrink: 0;
+      width: 120px;
+      height: 120px;
+      margin-right: 20px;
+      border-width: 4px;
+   }
+
+   .profile__name {
+      margin-top: 20px;
+
+      h1 {
+         margin-bottom: 20px;
+         font-size: 24px;
+         line-height: 29px;
+         color: $WHITE_COLOR;
+      }
+   }
+
+   .profile__mail {
+      bottom: 0;
+      height: 27px;
+      padding: 5px;
+      font-size: 14px;
+      line-height: 16px;
+   }
+
+   .profile__mail-icon {
+      margin-right: 5px;
+
+      img {
+         width: 12px;
+      }
+
+      &::after {
+         width: 5px;
+         height: 5px;
+         top: 1px;
+         right: -2px;
+      }
+   }
+
+   .profile__main {
+      padding-top: 40px;
+   }
+
+   .profile__section__heading {
+      font-size: 16px;
+      line-height: 19px;
+   }
+
+   .profile__section__text {
+      font-size: 14px;
+      line-height: 17px;
+   }
+
+   .profile__section__empty {
+      img {
+         width: 80px;
+         margin-bottom: 15px;
+      }
+
+      p {
+         font-size: 14px;
+         line-height: 17px;
+      }
+   }
+
+   .card__edit {
+      top: 10px;
+      right: 10px;
+      width: 30px;
+      height: 30px;
+      padding: 5px;
+   }
+
+   .profile__education__item,
+   .profile__experience__item,
+   .profile__language__item {
+      padding-left: 20px;
+
+      &::before {
+         width: 15px;
+         height: 15px;
+      }
+   }
+
+   .profile__experience__heading,
+   .profile__education__heading,
+   .profile__language__heading {
+      font-size: 16px;
+      line-height: 19px;
+   }
+
+   .profile__links__link {
+      font-size: 14px;
+      line-height: 17px;
+   }
+
+   .modal {
+      padding-top: 75px;
+      padding-bottom: 75px;
+   }
+
+   .modal__heading {
+      font-size: 16px;
+      line-height: 19px;
+   }
+
+   .modal__input, .modal__textarea {
+      font-size: 14px;
+      line-height: 17px;
+   }
+
+   .modal__label::after {
+      top: 0;
+   }
+
+   .heading-404 {
+      font-size: 100px;
+      line-height: 120px;
+   }
+
+   .text-404 {
+      p, a {
+         font-size: 16px;
+         line-height: 16px;
+      }
+   }
+
+   .info-page__email-icon {
+      width: 100px;
+      margin-bottom: 30px;
+   }
+
+   .info-page__email-text {
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+   }
+
+   .project-info__heading, .form-wrapper__heading {
+      font-size: 18px;
+      line-height: 22px;
+   }
+
+   .project-info__description, .project-info__value {
+      margin-bottom: 24px;
+      font-size: 16px;
+      line-height: 22px;
+   }
+}
+
+@include media-max(1000px) {
+   .statistics {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 24px;
+   }
+
+   .founders__card {
+      height: 250px;
+   }
+
+   .profile__section--basic {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 24px;
+   }
+}
+
+@include media-max(850px) {
+   .statistics {
+      grid-gap: 10px;
+   }
+
+   .grid-container {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+   }
+
+   .filter .flex-container {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+   }
+
+   .founders__list {
+      grid-column-gap: 10px;
+   }
+
+   .founders__card {
+      height: 196px;
+   }
+
+   .header-freelancers {
+      background-image: url('/img/bg-images/bg-freelancers@mobile.jpg');
+   }
+
+   .header-boards {
+      background-image: url('/img/bg-images/bg-boards@mobile.jpg');
+   }
+
+   .header-completed {
+      background-image: url('/img/bg-images/bg-finished-projects@mobile.jpg');
+   }
+
+   .header-contact {
+      background-image: url('/img/bg-images/bg-intro@mobile.jpg');
+   }
+
+   .intro__bg {
+      background-image: url('/img/bg-images/bg-intro@mobile.jpg');
+   }
+
+   .profile__section__main--grid {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+   }
+
+   .profile__experience__list, .profile__education__list {
+      grid-template-columns: 1fr;
+   }
+
+   .modal__field__4 {
+      grid-template-columns: 1.5fr 1fr;
+   }
+}
+
+@include media-max(620px) {
+   .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   .filter .flex-container {
+      grid-template-columns: 1fr;
+   }
+
+   .founders__list {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+   }
+
+   .form-wrapper {
+      width: 100%;
+   }
+
+   .form__field .label {
+      width: 100%;
+   }
+
+   .auth__inner {
+      width: 100%;
+   }
+
+   .role label {
+      width: 48%;
+   }
+
+   .profile__owner {
+      width: 100%;
+      margin-bottom: 20px;
+   }
+
+   .profile__name {
+      flex-grow: 1;
+      overflow: hidden;
+
+      h1 {
+         overflow: auto;
+         white-space: nowrap;
+      }
+   }
+
+   .profile__mail {
+      margin-left: auto;
+   }
+
+   .profile__section__header {
+      justify-content: space-between;
+   }
+
+   .profile__section--basic {
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+   }
+
+   .profile__section__main--grid {
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   .modal__field {
+      grid-template-columns: 1fr;
+   }
+
+   .modal__submit {
+      justify-content: space-between;
+
+      .button {
+         width: 48%;
+      }
+   }
+
+   .skills__add {
+      margin-bottom: 20px;
+   }
+
+   .text-404 {
+      display: block;
+      text-align: center;
+
+      img, p {
+         margin-right: 0;
+         margin-bottom: 10px;
+      }
+   }
+}
+
+@include media-max(500px) {
+   .statistics {
+      grid-template-columns: 1fr;
+   }
+
+   .add-language {
+      width: 100%;
+   }
+
+   .project-info__item {
+      width: 100%;
+      margin-right: 0 !important;
+   }
+}

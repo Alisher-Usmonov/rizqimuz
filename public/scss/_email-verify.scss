@@ -1,0 +1,46 @@
+@import "variables";
+.email-check {
+  width: 100%;
+  height: 100vh;
+  background-color: $MAIN_BG_COLOR;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .email-card {
+    width: 500px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 10px 10px 35px #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    &__img {
+      width: 250px;
+      height: 250px;
+    }
+    &__text {
+      font-size: 22px;
+      font-family: "SFPro";
+      color: #222;
+    }
+    &__btn {
+      margin-top: 20px;
+      padding: 10px 30px;
+      border: 2px solid $MAIN_BLUE_COLOR;
+      font-size: 22px;
+      font-family: "SFPro";
+      color: #222;
+      font-weight: 500;
+      transition: 0.3s ease-in-out;
+      &:hover {
+        background-color: $MAIN_BLUE_COLOR;
+        color: $WHITE_COLOR;
+        transition: 0.3s ease-in-out;
+      }
+    }
+  }
+}

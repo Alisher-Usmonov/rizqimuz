@@ -1,0 +1,40 @@
+<%- include('parts/header') %>
+
+<section class="intro">
+    <%- include('components/navbar', { logo: '' }) %>
+    <div class="auth auth-signin">
+        <div class="container">
+            <div class="auth__inner">
+                <form class="form" method="post" action="/signin">
+                    <label class="label">
+                        <span class="text">Emailingiz</span>
+                        <input class="input" type="email" name="email" data-input-email autocomplete="off">
+                    </label>
+                    <label class="label">
+                        <span class="text">Parolingiz</span>
+                        <input class="input" type="password" name="password" data-input-password autocomplete="off">
+                    </label>
+                    <div class="submit">
+                        <button class="button button-blue" type="submit" disabled>Kirish</button>
+                    </div>
+                </form>
+                <div class="auth__another">
+                    <span>Oldin ro'yxatdan o'tmaganmisiz? </span><a href="/signup">Ro'yxatdan o'tish</a>
+                </div>
+                <div class="auth__by">
+                    <button class="auth__api">
+                        <img src="/img/icons/google.svg" alt="google icon" width="24">
+                        <span>Google orqali ro'yxatdan o'tish</span>
+                    </button>
+                    <button class="auth__api">
+                        <img src="/img/icons/telegram.svg" alt="telegram icon" width="24">
+                        <span>Telegram orqali ro'yxatdan o'tish</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="intro__bg"></div>
+</section>
+
+<%- include('parts/footer') %>

@@ -1,0 +1,11 @@
+<%- include("parts/header", {
+    title: "Tasdiqlash"
+})%>
+<section>
+    <% if (already_verified) { %>
+     <p>Sizning elektron pochtangiz allaqachon tasdiqlangan.</p>
+    <% } else { %>
+     <p>Sizning elektron pochtangiz tasdiqlandi.</p>
+    <% } %> 
+</section>
+<%- include("parts/footer")%>
