@@ -1,20 +1,18 @@
 const { Schema, model } = require("mongoose");
+const { v4 } = require("uuid");
 
 const SponsorSchema = new Schema({
     id: {
         type: String,
         required: true,
-        unique: true
-    },
-    name:{
-        type: String,
-        required: true
+        unique: true,
+        default: v4(),
     },
     image:{
         type: String,
         required: true
     },
-    url: {
+    website_url: {
         type: String,
         required: true,
     }

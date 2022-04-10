@@ -31,18 +31,7 @@
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center;
-
-   &--suhrob {
-      background-image: url('/img/founders/founder-1@1x.jpg');
-   }
-
-   &--asadbek {
-      background-image: url('/img/founders/founder-2@1x.jpg');
-   }
-
-   &--ogabek {
-      background-image: url('/img/founders/founder-3@1x.jpg');
-   }
+   background-image: var(--bg-image);
 }
 
 .founder__name {

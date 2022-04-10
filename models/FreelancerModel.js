@@ -115,6 +115,10 @@ const UserSchema = new Schema({
     github: {
         type: String,
     },
+    is_top: {
+        type: Boolean,
+        default: false
+    }
 })
 
 const Freelancers = model("freelancers", UserSchema);

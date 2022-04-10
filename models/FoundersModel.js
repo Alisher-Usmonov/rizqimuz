@@ -18,5 +18,5 @@ const FounderSchema = new Schema({
     }
 });
 
-const FoundersModel = model("fouders", FounderSchema);
+const FoundersModel = model("founders", FounderSchema);
 module.exports = FoundersModel;
