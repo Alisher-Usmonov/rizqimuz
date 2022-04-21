@@ -1,10 +1,12 @@
 const { Schema, model } = require("mongoose");
+const { v4 } = require("uuid");
 
 const ProposalSchema = new Schema({
     id: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        default: v4()
     },
     anno_id: {
         type: String,
@@ -22,7 +24,7 @@ const ProposalSchema = new Schema({
         required: true,
     },
     portfolio_link: {
-        type: Number,
+        type: String,
     },
     cover_letter: {
         type: String,
@@ -30,5 +32,5 @@ const ProposalSchema = new Schema({
     }
 })
 
-const ProposalsModel = model("propposals", ProposalSchema);
+const ProposalsModel = model("proposals", ProposalSchema);
 module.exports = ProposalsModel;

@@ -15,16 +15,16 @@
 <main class="main">
     <div class="board-list">
         <div class="grid-container">
-            <% for (let i = 0; i < 16; i++) { %>
+            <% completed.map(project => { %>
                 <%- include('components/card', {
-                    cardTitle: 'ABM',
-                    viewsCount: 146,
-                    workersCount: null,
+                    cardTitle: project.title,
+                    viewsCount: project.views,
+                    workersCount: project.proposals,
                     cardType: 'bot',
-                    cardLink: '/posts/1',
+                    cardLink: `/posts/${project.slug}`,
                     editable: false
                 }) %>
-            <% } %>
+            <% }) %>
         </div>
         <div class="pagination-container">
             <div id="pagination"></div>

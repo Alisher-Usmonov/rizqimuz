@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
+    <title>Admin Panel</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
 </head>
 <body>
-    <h1>Admin panel bu yerda bo'ladi.</h1>
+    <div class="w-full h-screen bg-gray-200 flex">
+        <div class="w-[25%] bg-blue-300">
+            <%- include("components/admin-bar") %>
+        </div>
+        <div class="w-[75%] bg-indigo-300 p-2">
+            <form method="post" action="/boards" class="w-full h-auto p-1 bg-indigo-400 rounded-md">
+                <div class="w-full h-full grid grid-cols-2 grid-rows-2 gap-2">
+                    <input type="text" placeholder="Title..." name="title" required class="outline-none border border-gray-400 rounded-md p-2" />
+                    <input type="text" placeholder="Description..." name="description" required class="outline-none border border-gray-400 rounded-md p-2" />
+                    <input type="text" placeholder="Phone..." name="phone_number" required class="outline-none border border-gray-400 rounded-md p-2" />
+                    <input type="number" placeholder="Budget..." name="budget" required class="outline-none border border-gray-400 rounded-md p-2" />
+                </div>
+                <button type="submit" class=" w-full my-2 p-2 bg-white rounded-md">E'lon Yaratish</button>
+            </form>
+            <div class="w-full h-auto <% boards ? "p-2" : "" %> bg-indigo-400 mt-3 rounded-md">
+                <% boards.map(el => { %>
+                    <div class="text-white p-2 flex items-center justify-between">
+                        <div>
+                            <h2 class="text-[20px]"><%= el.title %></h2>
+                            <p class="text-[18px]"><%=el.phone_number %></p>
+                            <p><%=el.budget %>$</p>
+                            <p><%=el.is_completed ? "Yakunlangan" : "Yakunlanmagan" %></p>
+                            <p><%=el.is_public ? "Ommaviy" : "Ommaviy emas" %></p>
+                            <p></p>
+                        </div>
+                        <div class="flex flex-col gap-y-1">
+                            <button class="px-3 py-1 rounded-md bg-red-400 font-semibold <%=el.slug%> " id="delete-board">O'chirish</button>
+                            <button class="px-3 py-1 rounded-md bg-green-400 font-semibold" id=""><%=el.is_public ? "Ommaviylikdan o'chirish" : "Ommaviy qilish" %></button>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

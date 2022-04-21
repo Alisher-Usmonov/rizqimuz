@@ -1,10 +1,12 @@
 const { Schema, model } = require("mongoose");
+const { v4 } = require("uuid");
 
 const AnnouncementSchema = new Schema({
     anno_id: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        default: v4()
     },
     title:{
         type: String,

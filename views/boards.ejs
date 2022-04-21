@@ -40,23 +40,23 @@
                     <li class="select__item">10+</li>
                 </ul>
             </div>
-            <button class="button button-outline button-click">
+            <button class="button button-outline button-click" id="filter-project">
                 Filterlash
             </button>
         </div>
     </div>
     <div class="board-list">
         <div class="grid-container">
-            <% for (let i = 0; i < 16; i++) { %>
+            <% boards.map(board => { %>
                 <%- include('components/card', {
-                    cardTitle: 'Web dasturchilar kerak',
-                    viewsCount: 146,
-                    workersCount: 23,
+                    cardTitle: board.title,
+                    viewsCount: board.views,
+                    workersCount: board.proposals,
                     cardType: 'bot',
-                    cardLink: '/boards/firmaga-web-sayt-qilish-kerak',
+                    cardLink: `/boards/${board.slug}`,
                     editable: false
                 }) %>
-            <% } %>
+            <% }) %>
         </div>
         <div class="pagination-container">
             <div id="pagination"></div>

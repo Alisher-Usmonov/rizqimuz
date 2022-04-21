@@ -23,7 +23,6 @@ module.exports = async (req, res) => {
             sponsors,
             top_boards,
             user: req.user ? req.user : null,
-            async: true
         })
     } catch (err) {
         res.status(400).json({

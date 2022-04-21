@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Frilanerlar</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+</head>
+<body>
+    <div class="w-full h-screen bg-gray-200 flex">
+        <div class="w-[25%] bg-blue-300">
+            <%- include("components/admin-bar") %>
+        </div>
+        <div class="w-[75%] bg-indigo-300 p-2 flex flex-col gap-1">
+            <% freelancers.map(flr => { %>
+                <div class="w-full h-auto p-2 bg-indigo-400 rounded-md text-white">
+                    <h1 class="font-semibold text-[20px]"><%=flr.first_name + " " + flr.last_name%></h1>
+                    <p class="font-semibold text-[18px]"><%=flr.email%></p>
+                    <p class="font-semibold text-[16px]"><%=flr.phone_number%></p>
+                </div>    
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>

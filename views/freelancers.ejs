@@ -14,16 +14,17 @@
 <main class="main">
     <div class="board-list">
         <div class="grid-container">
-            <% for (let i = 0; i < 16; i++) { %>
+            <% freelancers.map(fl => { %>
                 <%- include('components/card', {
-                    cardTitle: 'Akbar Alixanov',
+                    cardTitle: fl.first_name + " " + fl.last_name,
                     viewsCount: null,
                     workersCount: null,
                     cardType: 'frontend',
+                    picture: fl.picture,
                     cardLink: '/posts/1',
                     editable: false
                 }) %>
-            <% } %>
+            <% }) %>
         </div>
         <div class="pagination-container">
             <div id="pagination"></div>

@@ -27,7 +27,7 @@ module.exports = async (req, res) => {
             ...user._doc,
             password: undefined
         })
-        res.cookie("token", token).redirect("/profile/"+user.slug);
+        res.cookie("token", token).redirect("/profile");
     } catch (err) {
         res.status(400).json({
             ok: false,

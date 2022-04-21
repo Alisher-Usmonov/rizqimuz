@@ -1,6 +1,11 @@
+const AnnouncementModel = require("../../models/AnnouncementModel");
+
 module.exports = async (req, res) => {
     try {
-        res.render("admin")
+        let boards = await AnnouncementModel.find();
+        res.render("admin", {
+            boards
+        });
     } catch (err) { 
         res.render("404");
     }

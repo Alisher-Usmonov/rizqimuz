@@ -1,12 +1,12 @@
 <%- include('parts/header') %>
-
+<% var ok %>
 <header class="header header-contact">
     <%- include('components/navbar', { logo: 'white' }) %>
     <div class="container">
         <h1 class="header__title">
-            <span>Firmaga web sayt</span>
+            <span><%=project.title.split(" ").slice(0, 2).join(" ")%></span>
             <br>
-            <span>qilish kerak</span>
+            <span><%=project.title.split(" ").slice(2).join(" ")%></span>
         </h1>
     </div>
 </header>
@@ -16,52 +16,49 @@
         <div class="project-info">
             <h2 class="d-none">E'lon haqida batafsil</h2>
             <p class="project-info__description">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                Ipsum has been the industry's standard dummy text ever since the 1500s, when
-                an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                It has survived not only five centuries, but also the leap into electronic typesetting,
+               <%=project.description%>
             </p>
             <div class="project-info__additional">
                 <div class="project-info__item">
                     <h3 class="project-info__heading">
                         Telefon raqam
                     </h3>
-                    <p class="project-info__value">+998999639773</p>
+                    <p class="project-info__value"><%=project.phone_number%></p>
                 </div>
                 <div class="project-info__item">
                     <h3 class="project-info__heading">
                         Loyiha byudjeti
                     </h3>
-                    <p class="project-info__value">1200$</p>
+                    <p class="project-info__value"><%=project.budget%>$</p>
                 </div>
             </div>
         </div>
         <div class="form-wrapper">
             <h2 class="form-wrapper__heading">Loyihani band qilish uchun pastdagi formani to'ldiring</h2>
-            <form class="form">
+            <form class="form" method="post" action="/boards/<%=project.slug%>">
                 <div class="form__field">
                     <label class="label">
                         <span class="text">Ismingiz</span>
-                        <input class="input" type="text" data-input-fname />
+                        <input class="input" type="text" name="name" data-input-fname />
                     </label>
                     <label class="label">
                         <span class="text">Github link</span>
-                        <input class="input" type="url" data-input-git />
+                        <input class="input" type="url" name="github_link"  data-input-git />
                     </label>
                 </div>
                 <div class="form__field">
-                    <label class="label">
+                    <label class="label">  
                         <span class="text">Telefon raqamingiz</span>
-                        <input class="input" id="phone" type="tel" data-input-phone />
+                        <input class="input" id="phone" type="tel" name="phone_number"  data-input-phone />
                     </label>
                     <label class="label">
                         <span class="text">Portfolio saytga link</span>
-                        <input class="input" type="url" data-input-portfolio-link />
+                        <input class="input" type="url" name="portfolio_link"  data-input-portfolio-link />
                     </label>
                 </div>
-                <label class="label valid after-none">
+                <label class="label valid after-none" for="textarea">
                     <span class="text">Izohingizni qoldiring</span>
-                    <textarea class="textarea"></textarea>
+                    <textarea class="textarea" name="cover_letter" id="textarea"></textarea>
                 </label>
                 <div class="submit">
                     <button class="button button-blue" type="submit" disabled>Jo'natish</button>
@@ -70,6 +67,15 @@
         </div>
     </div>
 </main>
+
+<% if(ok) {%> 
+    <div class="toaster toaster--success">
+        <p class="toaster__text"><%=message%></p>
+        <div class="toaster__close">
+          <img src="/img/icons/times.svg" alt="times icon" />
+        </div>
+      </div>
+<% }%>
 
 <%- include('components/footer') %>
 <%- include('parts/footer') %>
