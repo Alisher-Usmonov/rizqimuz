@@ -6,7 +6,6 @@ const cloudinary = require("../../modules/cloudinary");
 module.exports = async (req, res) => {
     try {
         let { image } = req.files;
-        console.log(req.files);
         let { name } = req.body;
 
         if(!name || !image) {

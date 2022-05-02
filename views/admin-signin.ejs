@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="w-full h-screen flex items-center justify-center bg-gradient-to-r from-blue-400 to-indigo-400">
+    <form action="/admin/login" method="post" class="w-[400px] p-2 h-[300px] bg-white flex flex-col items-center shadow-md">
+        <h1 class="text-center font-semibold text-xl mt-3 mb-4 select-none">Admin Login</h1>
+        <h3 id="error" class="w-10/12 p-1 bg-red-500 text-white text-[16px] mb-2 hidden"></h3>
+        <input type="text" required name="username" class="block w-10/12 p-[5px] border-[1px] border-gray-300 mb-3 outline-none bg-gray-100" placeholder="Username">
+        <input type="password" required  name="password" class="block w-10/12 p-[5px] border-[1px] border-gray-300 mb-3 outline-none bg-gray-100" placeholder="Password">
+        <button type="submit" class="w-1/2 mx-auto p-2 bg-blue-500 text-white mt-5">Login</button>
+    </form>
+<% -include("parts/footer")%>

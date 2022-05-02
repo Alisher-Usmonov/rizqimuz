@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Admins</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+</head>
+<body>
+    <div class="w-full flex h-screen">
+        <div class="w-[25%] bg-blue-300">
+            <%- include("components/admin-bar") %>
+        </div>
+        <div class="w-[75%] bg-indigo-300 p-2 flex flex-col gap-1">
+            <form action="/admin/admins" method="post" class="grid grid-cols-2 gap-2 bg-indigo-400 p-2">
+                <input type="text" name="username" class="bg-white p-2 outline-none" spellcheck="false" placeholder="Username">
+                <input type="password" name="password" class="bg-white p-2 outline-none" placeholder="Password">
+                <button type="submit" class="w-full mt-1 col-span-2 rounded-md bg-indigo-500 py-2 text-white font-semibold text-lg">O'zgartirish</button>
+            </form>
+            <div class="w-full h-auto grid grid-cols-3 gap-1 bg-indigo-400 mt-3 p-2">
+                <% admins.map(admin => { %>
+                    <div class="bg-white p-2 flex flex-col">
+                        <h2 class="font-semibold mb-1 text-lg"><%= admin.username %></h2>
+                        <button class="bg-red-400 py-1 text-white" id="delete-admin" data-admin-id="<%= admin.id %>">O'chirish</button>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+<%- include("parts/footer") %>

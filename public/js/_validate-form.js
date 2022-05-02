@@ -37,7 +37,7 @@ export default () => {
             input.addEventListener('input', e => {
                 let target = e.target
                 let value = target.value
-                let label = e.target.parentElement
+                let label = target.parentElement
                 if (target.hasAttribute('data-input-fname')) {
                     if (!/^[a-z'`]+$/i.test(value) || value.length < 3 || value.length > 30) {
                         makeInvalid(label, `3 tadan kam bo'lmagan va 30 tadan ko'p bo'lmagan, lotin harflaridan iborat bo'lishi kerak`)
@@ -110,7 +110,7 @@ export default () => {
                 if (selectAll('.valid').length === labels.length) {
                     submit.removeAttribute('disabled')
                 } else {
-                    submit.setAttribute('disabled', true)
+                    submit.setAttribute('disabled', false)
                 }
             })
         })

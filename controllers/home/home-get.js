@@ -6,17 +6,22 @@ const SponsorModel = require("../../models/SponsorModel");
 module.exports = async (req, res) => {
     try {
         let freelancers = await FreelancerModel.find();
+        let top_freelancers = await FreelancerModel.find({
+            is_top: true
+        });
+        console.log(top_freelancers);
         let employers = await EmployerModel.find();
         let announcements = await AnnouncementModel.find();
         let end_boards = await AnnouncementModel.find({
             is_completed: true
         });
         let sponsors = await SponsorModel.find();
-        let top_boards = await AnnouncementModel.find().limit(10).sort({ views: 'asc' });
+        let top_boards = await AnnouncementModel.find().limit(10).sort({ views: 'desc' });
         res.render('index', {
             title: `Rizqim.uz | O'zbekistondagi frilans platformasi`,
             path: '/',
             freelancers,
+            top_freelancers,
             employers,
             announcements,
             end_boards,

@@ -4,13 +4,12 @@ module.exports = async (req, res) => {
     try {
         let { slug } = req.params;
         let project = await AnnouncementModel.findOne({
-            slug
+            slug,
         });
-
         let updatedProject = await AnnouncementModel.findOneAndUpdate({
             slug
         }, {
-            views: project._doc.views+1,
+            views: project._doc.views + 1,
         });
 
         res.render('project-info', {

@@ -7,7 +7,6 @@ module.exports = async (req, res) => {
         let abouts = await AboutsModel.find();
         let { text } = abouts[0];
         let founders = await FoundersModel.find();
-        console.log(founders);
         res.render('about', {
             title: 'Biz haqimizda | Rizqim',
             path: '/about',

@@ -1,17 +1,16 @@
 const JWT = require("../modules/jwt");
-const Admins = require("../models/AdminModel");
 
-module.exports = async (req, res, next) => {
-    let token = req?.cookies?.token;
-    if(!token) {
-        res.redirect("/signin");
+module.exports = (req, res, next) => {
+    let adminToken = req?.cookies?.admin;
+
+    if(!adminToken) {
+        res.redirect("/admin/login");
+        return;
     }
-    let user = await JWT.verifyToken(token);
-    let admin = await Admins.findOne({
-        user_id: user.id
-    });
-    if(!admin) {
-        res.redirect("/");
-    }
+
+    let admin = JWT.verifyToken(adminToken);
+
+    req.admin = admin;
+    
     next();
 }

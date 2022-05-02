@@ -32,16 +32,21 @@
             <div class="slider-1 splide">
                 <div class="splide__track">
                     <ul class="splide__list">
-                        <li class="splide__slide">
-                            <%- include('components/card', {
-                                cardTitle: 'Web dasturchilar kerak',
-                                viewsCount: 146,
-                                workersCount: 23,
-                                cardType: 'bot',
-                                cardLink: '/posts/1',
-                                editable: false
-                            }) %>
-                        </li>
+                        <% if(top_boards.length > 1) { %> 
+                            <% top_boards.map(board => { %>
+                                <li class="splide__slide">
+                                    <%- include('components/card', {
+                                        cardTitle: board.title,
+                                        viewsCount: board.views,
+                                        workersCount: board.proposals,
+                                        cardType: 'bot',
+                                        cardLink: '/boards/'+board.slug,
+                                        editable: false
+                                    }) %>
+                                </li>
+                            <% }) %>
+                        <% } else { %>
+                        <% } %>
                     </ul>
                 </div>
             </div>
@@ -61,22 +66,26 @@
             <div class="top-freelancers splide">
                 <div class="splide__track">
                     <ul class="splide__list">
-                        <li class="splide__slide">
-                            <div class="freelancer__card" title="Muhammadjavohir Suratov">
-                                <div class="freelancer__img">
-                                    <picture>
-                                        <source srcset="/img/users/user@1x.webp 1x, /img/users/user@2x.webp 2x"
-                                                type="image/webp">
-                                        <img srcset="/img/users/user@1x.jpg 1x, /img/users/user@2x.jpg 2x">
-                                    </picture>
-                                </div>
-                                <div class="freelancer__info">
-                                    <h3 class="freelancer__name">Og'abek Sultonbayev</h3>
-                                    <span class="freelancer__level">Senior Developer</span>
-                                </div>
-                                <a class="card__link" href="/freelancers/sultonbayevogabek">Card Link</a>
-                            </div>
-                        </li>
+                        <% if(top_freelancers.length > 1) { %>
+                            <% top_freelancers.map(freelancer => { %>
+                                <li class="splide__slide">
+                                    <div class="freelancer__card" title="Muhammadjavohir Suratov">
+                                        <div class="freelancer__img">
+                                            <picture>
+                                                <source srcset="<%= freelancer.picture %>">
+                                                <img srcset="<%= freelancer.picture %>">
+                                            </picture>
+                                        </div>
+                                        <div class="freelancer__info">
+                                            <h3 class="freelancer__name"><%= freelancer.first_name %> <%= freelancer.last_name %></h3>
+                                            <span class="freelancer__level">Senior Developer</span>
+                                        </div>
+                                        <a class="card__link" href="/freelancers/sultonbayevogabek">Card Link</a>
+                                    </div>
+                                </li>
+                            <% }) %>
+                        <% } else { %>
+                        <% } %>
                     </ul>
                 </div>
             </div>

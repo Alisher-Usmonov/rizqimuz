@@ -14,13 +14,15 @@
         </div>
         <div class="w-[75%] bg-indigo-300 p-2 flex flex-col gap-1">
             <% freelancers.map(flr => { %>
-                <div class="w-full h-auto p-2 bg-indigo-400 rounded-md text-white">
-                    <h1 class="font-semibold text-[20px]"><%=flr.first_name + " " + flr.last_name%></h1>
-                    <p class="font-semibold text-[18px]"><%=flr.email%></p>
-                    <p class="font-semibold text-[16px]"><%=flr.phone_number%></p>
+                <div class="w-full h-auto p-2 bg-indigo-400 rounded-md text-white flex justify-between items-center">
+                    <div>
+                        <h1 class="font-semibold text-[20px]"><%=flr.first_name + " " + flr.last_name%></h1>
+                        <p class="font-semibold text-[18px]"><%=flr.email%></p>
+                        <p class="font-semibold text-[16px]"><%=flr.phone_number%></p>
+                    </div>
+                    <button class="bg-green-400 px-2 py-1 text-white" id="freelancer-status-update" data-now-status="<%= flr.is_top %>" data-freelancer-id="<%= flr.id %>"> <%= flr.is_top ? "Top'dan olib tashlash" : "Top" %></button>
                 </div>    
             <% }) %>
         </div>
     </div>
-</body>
-</html>
+<%- include("parts/footer") %>

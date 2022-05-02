@@ -22,9 +22,9 @@
                 </div>
                 <button type="submit" class=" w-full my-2 p-2 bg-white rounded-md">E'lon Yaratish</button>
             </form>
-            <div class="w-full h-auto <% boards ? "p-2" : "" %> bg-indigo-400 mt-3 rounded-md">
+            <div class="w-full h-auto <% boards ? "p-2" : "" %> mt-3 rounded-md">
                 <% boards.map(el => { %>
-                    <div class="text-white p-2 flex items-center justify-between">
+                    <div class="text-white p-2 flex items-center justify-between mb-1 bg-indigo-400">
                         <div>
                             <h2 class="text-[20px]"><%= el.title %></h2>
                             <p class="text-[18px]"><%=el.phone_number %></p>
@@ -34,13 +34,13 @@
                             <p></p>
                         </div>
                         <div class="flex flex-col gap-y-1">
-                            <button class="px-3 py-1 rounded-md bg-red-400 font-semibold <%=el.slug%> " id="delete-board">O'chirish</button>
-                            <button class="px-3 py-1 rounded-md bg-green-400 font-semibold" id=""><%=el.is_public ? "Ommaviylikdan o'chirish" : "Ommaviy qilish" %></button>
+                            <button class="px-3 py-1 rounded-md bg-red-400 font-semibold" id="delete-board" data-slug="<%=el.slug%>">O'chirish</button>
+                            <button class="px-3 py-1 rounded-md bg-green-400 font-semibold" id="public-board" data-slug="<%=el.slug%>"><%=el.is_public ? "Ommaviylikdan o'chirish" : "Ommaviy qilish" %></button>
+                            <button class="px-3 py-1 rounded-md bg-yellow-400 font-semibold" id="board-complete-update" data-board-id="<%=el.anno_id%>" data-now-status="<%=el.is_completed%>" ><%=el.is_completed ? "Yakunlanganlardan o'chirish" : "Yakunlash" %></button>
                         </div>
                     </div>
                 <% }) %>
             </div>
         </div>
     </div>
-</body>
-</html>
+<%- include("parts/footer") %>

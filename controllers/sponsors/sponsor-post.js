@@ -5,6 +5,7 @@ const path = require("path");
 
 module.exports = async (req, res) => {
     try {
+        console.log(req.body);
         let { image } = req.files;
         let { website_url } = await SponsorValidation(req.body);
         if(!image) {

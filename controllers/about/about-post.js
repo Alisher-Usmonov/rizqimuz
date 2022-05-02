@@ -12,10 +12,7 @@ module.exports = async (req, res) => {
             text
         })
 
-        res.status(200).json({
-            ok: true,
-            about
-        })
+        res.redirect("/admin/about");
     } catch (err) {
         res.status(400).json({
             ok: false,

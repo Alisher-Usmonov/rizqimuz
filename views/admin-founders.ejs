@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+</head>
+<body>
+    <div class="w-full h-screen flex">
+        <div class="w-[25%] bg-blue-300">
+            <%- include("components/admin-bar") %>
+        </div>
+        <div class="w-[75%] bg-indigo-300 p-2 flex flex-col">
+            <div class="w-full h-full overflow-y-scroll">
+                <div class="w-full h-auto p-1 grid grid-cols-2 gap-2 bg-indigo-400">
+                    <input type="text" name="name" id="founder-name" class="text-[16px] outline-none p-[5px]" placeholder="Asoschi nomi">
+                    <label for="image-input" class="flex flex-col items-center justify-center cursor-pointer bg-blue-300 p-1" title="Rasm yuklash">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#FFFFFF" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <p id="image-name" class="text-white text-[14px] font-mono"></p>
+                    </label>
+                    <input type="file" name="image" id="image-input" class="hidden" accept="image/*">
+                    <button id="founder-submit" class="w-full py-2 bg-green-400 text-white font-semibold col-span-2">Yaratish</button>
+                </div>
+                <div class="w-full p-2 grid grid-cols-2 bg-indigo-400 mt-2 gap-2">
+                    <% founders.map(founder => { %>
+                        <div class="p-2 bg-blue-300 flex flex-col h-[400px] rounded-md">
+                            <div class="w-full h-[350px] flex items-center justify-center">
+                                    <img src="<%=founder.image%>" alt="<%=founder.name%>" class="w-[300px] h-[300px]" />
+                            </div>
+                            <h2 class="text-xl text-center mt-1"><%=founder.name%></h2>
+                            <button class="py-2 px-4 bg-red-400 mx-auto rounded-md font-semibold text-white mt-1" id="delete-founder" data-founder-id="<%=founder.id%>">O'chirish</button>
+                        </div>
+                        <% }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include("parts/footer")%>

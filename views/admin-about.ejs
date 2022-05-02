@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | About</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+</head>
+<body>
+    <div class="w-full flex h-screen">
+        <div class="w-[25%] bg-blue-300">
+            <%- include("components/admin-bar") %>
+        </div>
+        <div class="w-[75%] bg-indigo-300 p-2 flex flex-col gap-1">
+            <form action="/about" method="post">
+                <textarea class="w-full min-h-[250px] resize-none outline-none p-1" name="text" id="about-area"><%= about.text %></textarea>
+                <button type="submit" class="w-full mt-1 rounded-md bg-indigo-500 py-2 text-white font-semibold text-lg">O'zgartirish</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
