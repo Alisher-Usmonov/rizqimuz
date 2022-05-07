@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
         image.mv(avaURL, async (err) => {
             if (!err) {
                 let uploaded_image = await cloudinary(avaURL);
-                console.log(uploaded_image);
+
                 let user = await Freelancers.findOneAndUpdate({
                     user_id: req.user.id
                 }, {

@@ -30,5 +30,21 @@ export default () => {
             }
         })
 
+        deleteButtons.forEach(delBtn => {
+            let sponsorId = delBtn.getAttribute("data-sponsor-id");
+
+            delBtn.addEventListener("click", async () => {
+                let req = await fetch(`/sponsor/${sponsorId}`, {
+                    method: "DELETE"
+                });
+                let data = await req.json();
+
+                if(data.ok) {
+                    window.location.reload();
+                } else {
+                    alert(data.message);
+                }
+            })
+        })
     } catch (err) {}
 }

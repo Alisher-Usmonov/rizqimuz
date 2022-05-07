@@ -14,6 +14,7 @@ import admin from "./_admin";
 import freelancerUpdate from "./_freelancer-update";
 import boardUpdate from "./_board-update";
 import sponsorPost from './_sponsor-post';
+import skill from "./_skill";
 
 document.addEventListener('DOMContentLoaded', () => {
     clickEffect()
@@ -31,4 +32,5 @@ document.addEventListener('DOMContentLoaded', () => {
     freelancerUpdate()
     boardUpdate()
     sponsorPost()
+    skill();
 })

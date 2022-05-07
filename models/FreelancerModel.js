@@ -52,15 +52,24 @@ const UserSchema = new Schema({
     experience: [
         {
             from_year: {
-                type: Date
+                type: Number
+            },
+            start_month: {
+                type: String
             },
             to_year: {
-                type: Date
+                type: Number
+            },
+            end_month: {
+                type: String
             },
             company_name: {
                 type: String
             },
             desc: {
+                type: String
+            },
+            position: {
                 type: String
             }
 
@@ -87,15 +96,31 @@ const UserSchema = new Schema({
             }
         }
     ],
-    education_name: {
-        type: String
-    },
-    education_date: {
-        type: Date
-    },
-    education_desc: {
-        type: String
-    },
+    education: [
+        {
+            name: {
+                type: String
+            },
+            direction: {
+                type: String
+            },
+            start_year: {
+                type: Number
+            },
+            start_month: {
+                type: String
+            },
+            end_year: {
+                type: Number
+            },
+            end_month: {
+                type: String
+            },
+            about: {
+                type: String
+            }
+        }
+    ],
     languages:  [
         {
             name: {

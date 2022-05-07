@@ -69,7 +69,7 @@
                         <% if(top_freelancers.length > 1) { %>
                             <% top_freelancers.map(freelancer => { %>
                                 <li class="splide__slide">
-                                    <div class="freelancer__card" title="Muhammadjavohir Suratov">
+                                    <div class="freelancer__card" title="<%= freelancer.first_name %> <%= freelancer.last_name %>">
                                         <div class="freelancer__img">
                                             <picture>
                                                 <source srcset="<%= freelancer.picture %>">

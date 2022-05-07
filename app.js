@@ -4,7 +4,6 @@ const express = require('express')
 const CookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const app = express();
-const authMiddleware = require('./middlewares/auth-middleware')
 const mongo = require('./modules/mongo')
 
 mongo();
@@ -14,7 +13,6 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(CookieParser());
 app.use(express.static(path.join(__dirname, 'public')))
-app.use(authMiddleware)
 app.use(morgan("tiny"))
 
 const routesPath =  path.join(__dirname, 'routes')

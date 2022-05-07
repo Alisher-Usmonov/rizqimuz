@@ -43,8 +43,7 @@ module.exports = async (req, res) => {
         await mailSend(verify_url, "Rizqim.uz hisobni tasdiqlash", "Bir nima" ,email);
 
         // Response
-        res.cookie("token", token);
-        res.redirect("/email-check");
+        res.cookie("token", token).redirect("/email-check");
     } catch (err) {
         res.status(400).json({
             ok: false,

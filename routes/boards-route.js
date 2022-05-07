@@ -1,5 +1,7 @@
 const router = require('express').Router()
+const authMiddleware = require("../middlewares/auth-middleware");
 
+router.use(authMiddleware);
 router.get('/', require('../controllers/boards/boards-get'));
 router.post("/", require("../controllers/boards/boards-post"));
 router.get('/:slug', require('../controllers/boards/project-info-get'));
