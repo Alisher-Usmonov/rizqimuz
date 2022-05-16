@@ -8,7 +8,6 @@ const testModal = () => {
     let modalUpdate = selectAll("[data-modal-update]");
     let modalCloseIcon = selectAll("[data-modal-close-icon]");
     let removeSkillBtns = selectAll("#skill-remove-btn");
-    let portfolioUpdate = selectAll("")
 
     editBtns.forEach((button, id) => {
         button.addEventListener("click", async () => {
